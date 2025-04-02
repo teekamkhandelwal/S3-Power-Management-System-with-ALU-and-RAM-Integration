@@ -9,6 +9,9 @@ ALU Operations:
 ## Block Diagram
 Below is the system-level block diagram:
 
+
+
+
 +--------------------------------+
 |         S3 Power System        |
 +--------------------------------+
