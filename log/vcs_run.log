@@ -1,0 +1,43 @@
+4 modules and 0 UDP read.
+recompiling module alu
+recompiling module power_management
+recompiling module s3_system
+recompiling module tb_s3_power_management_with_alu
+All of 4 modules done
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/apps/vcsmx/vcs/U-2023.03-SP2/linux64/lib -L/apps/vcsmx/vcs/U-2023.03-SP2/linux64/lib  -Wl,-rpath-link=./   objs/amcQw_d.o   _332_archive_1.so   SIM_l.o       rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /apps/vcsmx/vcs/U-2023.03-SP2/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive          /apps/vcsmx/vcs/U-2023.03-SP2/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+CPU time: .469 seconds to compile + .517 seconds to elab + .288 seconds to link
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  Apr  2 16:55 2025
+Time: 0 | Reset: 1 | A: 0000 | B: 0000 | Opcode: 00 | Result: 0000 | Idle: x | Interrupt: 0 | Clk Gate: 0 | PG Down: 0 | Reset Assert: 0 | Iso Clampn Deassert: 1
+Time: 10 | Reset: 0 | A: 0000 | B: 0000 | Opcode: 00 | Result: 0000 | Idle: x | Interrupt: 0 | Clk Gate: 0 | PG Down: 0 | Reset Assert: 0 | Iso Clampn Deassert: 1
+
+[Scenario 2] ALU operations
+
+Time: 20 | Reset: 0 | A: 0100 | B: 0101 | Opcode: 00 | Result: 0000 | Idle: x | Interrupt: 0 | Clk Gate: 0 | PG Down: 0 | Reset Assert: 0 | Iso Clampn Deassert: 1
+Time: 25 | Reset: 0 | A: 0100 | B: 0101 | Opcode: 00 | Result: 1001 | Idle: 0 | Interrupt: 0 | Clk Gate: 0 | PG Down: 0 | Reset Assert: 0 | Iso Clampn Deassert: 1
+Time: 40 | Reset: 0 | A: 1000 | B: 0011 | Opcode: 01 | Result: 1001 | Idle: 0 | Interrupt: 0 | Clk Gate: 0 | PG Down: 0 | Reset Assert: 0 | Iso Clampn Deassert: 1
+Time: 45 | Reset: 0 | A: 1000 | B: 0011 | Opcode: 01 | Result: 0101 | Idle: 0 | Interrupt: 0 | Clk Gate: 0 | PG Down: 0 | Reset Assert: 0 | Iso Clampn Deassert: 1
+Time: 60 | Reset: 0 | A: 0010 | B: 0110 | Opcode: 10 | Result: 0101 | Idle: 0 | Interrupt: 0 | Clk Gate: 0 | PG Down: 0 | Reset Assert: 0 | Iso Clampn Deassert: 1
+Time: 65 | Reset: 0 | A: 0010 | B: 0110 | Opcode: 10 | Result: 0010 | Idle: 0 | Interrupt: 0 | Clk Gate: 0 | PG Down: 0 | Reset Assert: 0 | Iso Clampn Deassert: 1
+Time: 80 | Reset: 0 | A: 1001 | B: 0100 | Opcode: 11 | Result: 0010 | Idle: 0 | Interrupt: 0 | Clk Gate: 0 | PG Down: 0 | Reset Assert: 0 | Iso Clampn Deassert: 1
+Time: 85 | Reset: 0 | A: 1001 | B: 0100 | Opcode: 11 | Result: 1101 | Idle: 0 | Interrupt: 0 | Clk Gate: 0 | PG Down: 0 | Reset Assert: 0 | Iso Clampn Deassert: 1
+
+[Scenario 3] Transition to idle state
+
+Time: 100 | Reset: 0 | A: 1001 | B: 0100 | Opcode: 11 | Result: 1101 | Idle: x | Interrupt: 0 | Clk Gate: 0 | PG Down: 0 | Reset Assert: 0 | Iso Clampn Deassert: 1
+
+[Scenario 4] Multi-level power down
+
+Time: 200 | Reset: 0 | A: 1001 | B: 0100 | Opcode: 11 | Result: 1101 | Idle: x | Interrupt: x | Clk Gate: 0 | PG Down: 0 | Reset Assert: 0 | Iso Clampn Deassert: 1
+
+[Scenario 5] Exit idle state and recover
+
+Time: 220 | Reset: 0 | A: 1001 | B: 0100 | Opcode: 11 | Result: 1101 | Idle: 0 | Interrupt: 0 | Clk Gate: 0 | PG Down: 0 | Reset Assert: 0 | Iso Clampn Deassert: 1
+$finish called from file "testbench.sv", line 327.
+$finish at simulation time                  260
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 260 ns
